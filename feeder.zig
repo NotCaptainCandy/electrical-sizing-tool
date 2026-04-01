@@ -26,3 +26,28 @@ const cables = [_]Cable{
     .{ .name = "3C 240mm² Cu XLPE", .area_mm2 = 240, .r_ohm_per_km = 0.098, .x_ohm_per_km = 0.080, .ampacity_a = 415.0 },
     .{ .name = "3C 300mm² Cu XLPE", .area_mm2 = 300, .r_ohm_per_km = 0.078, .x_ohm_per_km = 0.079, .ampacity_a = 470.0 },
 };
+
+// Output Structure
+
+pub const FeederResult = struct {
+    full_load_current_a: f64, // Taken from transformer.fullLoadCurrent
+    cable: Cable, // selected cable
+    length_m: f64, // feeder run length provided by user
+    vd_pct: f64, // calculated voltage drop %
+    vd_ok: bool, // true if vd_pct <= VD_LIMIT_PCT
+    ampacity_ok: bool, // true if cable ampacity >= full_load_current
+};
+
+// Voltage Drop Limit Percentage (Based on CSA C22.1)
+const VD_LIMIT_PCT: f64 = 3.0;
+
+// Voltage Drop calculation based on the formula (gives a conservative approx):
+// VD% = (√3 × I × L × (R·cosφ + X·sinφ)) / V_LL  × 100
+
+fn voltageDrop(cable: Cable, current_a: f64, length_m: f64, pf: f64, voltage_ll: f64) f64 {
+    const length_km = length_m / 1000.0;
+    const sin_phi = std.math.sqrt(1.0 - pf * pf);
+    const vd = (std.math.sqrt(3.0) * current_a * length_km * (cable.r_ohm_per_km * pf + cable.x_ohm_per_km * sin_phi)) / voltage_ll * 100.0;
+
+    return vd;
+}
