@@ -34,6 +34,10 @@ pub fn writeReport(io: std.Io, allocator: std.mem.Allocator, out_path: []const u
     try sep(w);
     try w.writeAll("Report complete.\n");
 
+    if (std.fs.path.dirname(out_path)) |dir_path| {
+        try std.Io.Dir.cwd().createDirPath(io, dir_path);
+    }
+
     const file = try std.Io.Dir.cwd().createFile(io, out_path, .{});
 
     var out_buf: [4096]u8 = undefined;
@@ -97,7 +101,7 @@ fn buildLoadSummary(w: W, r: ReportInput) !void {
 fn buildTransformerSizing(w: W, r: ReportInput) !void {
     try secHeader(w, "2. TRANSFORMER SIZING");
     try w.print("  Demand kVA               : {d:.1} kVA\n", .{r.selection.demand_kva});
-    try w.print("  Growth margin ({d:.0}%)  : +{d:.1} kVA\n", .{ r.selection.growth_margin * 100.0, r.selection.required_kva - r.selection.demand_kva });
+    try w.print("  Growth margin ({d:.0}%)      : +{d:.1} kVA\n", .{ r.selection.growth_margin * 100.0, r.selection.required_kva - r.selection.demand_kva });
     try w.print("  Required kVA             : {d:.1} kVA\n", .{r.selection.required_kva});
     try w.print("  Selected standard rating : {d:.0} kVA\n", .{r.selection.selected_kva});
     try w.print("  Utilization at demand    : {d:.1}%\n", .{r.selection.utilization_pct});
