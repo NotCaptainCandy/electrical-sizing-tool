@@ -1,13 +1,13 @@
 {
   "facility_name": "Acme Food Processing Plant",
   "loads": [
-    { "name": "Process Motor 1",    "kw": 75.0, "pf": 0.88, "type": "motor",   "duty": "continuous"  },
-    { "name": "Process Motor 2",    "kw": 55.0, "pf": 0.90, "type": "motor",   "duty": "continuous"  },
-    { "name": "Air Compressor",     "kw": 45.0, "pf": 0.85, "type": "motor",   "duty": "intermittent"},
-    { "name": "Conveyor Drive",     "kw": 22.0, "pf": 0.88, "type": "motor",   "duty": "intermittent"},
-    { "name": "Lighting - Plant",   "kw": 20.0, "pf": 0.95, "type": "lighting","duty": "continuous"  },
-    { "name": "Lighting - Office",  "kw": 10.0, "pf": 0.95, "type": "lighting","duty": "continuous"  },
-    { "name": "HVAC - Plant",       "kw": 40.0, "pf": 0.90, "type": "hvac",    "duty": "intermittent"},
-    { "name": "Office Outlets",     "kw": 15.0, "pf": 0.95, "type": "lighting","duty": "continuous"  }
+    { "name": "Process Motor 1",   "kw": 75.0, "pf": 0.88, "load_type": "motor",   "duty": "continuous"   },
+    { "name": "Process Motor 2",   "kw": 55.0, "pf": 0.90, "load_type": "motor",   "duty": "continuous"   },
+    { "name": "Air Compressor",    "kw": 45.0, "pf": 0.85, "load_type": "motor",   "duty": "intermittent" },
+    { "name": "Conveyor Drive",    "kw": 22.0, "pf": 0.88, "load_type": "motor",   "duty": "intermittent" },
+    { "name": "Lighting - Plant",  "kw": 20.0, "pf": 0.95, "load_type": "lighting","duty": "continuous"   },
+    { "name": "Lighting - Office", "kw": 10.0, "pf": 0.95, "load_type": "lighting","duty": "continuous"   },
+    { "name": "HVAC - Plant",      "kw": 40.0, "pf": 0.90, "load_type": "hvac",    "duty": "intermittent" },
+    { "name": "Office Outlets",    "kw": 15.0, "pf": 0.95, "load_type": "lighting","duty": "continuous"   }
   ]
 }

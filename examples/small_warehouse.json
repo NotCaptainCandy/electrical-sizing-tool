@@ -1,11 +1,11 @@
 {
   "facility_name": "Riverside Storage Warehouse",
   "loads": [
-    { "name": "Lighting Zone A",      "kw": 5.0,  "pf": 0.95, "type": "lighting","duty": "continuous"  },
-    { "name": "Lighting Zone B",      "kw": 5.0,  "pf": 0.95, "type": "lighting","duty": "continuous"  },
-    { "name": "Emergency Lighting",   "kw": 1.0,  "pf": 1.00, "type": "lighting","duty": "continuous"  },
-    { "name": "HVAC Unit",            "kw": 10.0, "pf": 0.90, "type": "hvac",    "duty": "intermittent"},
-    { "name": "Office Outlets",       "kw": 5.0,  "pf": 0.95, "type": "lighting","duty": "continuous"  },
-    { "name": "Loading Dock Heaters", "kw": 3.0,  "pf": 1.00, "type": "lighting","duty": "continuous"  }
+    { "name": "Lighting Zone A",      "kw": 5.0,  "pf": 0.95, "load_type": "lighting","duty": "continuous"   },
+    { "name": "Lighting Zone B",      "kw": 5.0,  "pf": 0.95, "load_type": "lighting","duty": "continuous"   },
+    { "name": "Emergency Lighting",   "kw": 1.0,  "pf": 1.00, "load_type": "lighting","duty": "continuous"   },
+    { "name": "HVAC Unit",            "kw": 10.0, "pf": 0.90, "load_type": "hvac",    "duty": "intermittent" },
+    { "name": "Office Outlets",       "kw": 5.0,  "pf": 0.95, "load_type": "lighting","duty": "continuous"   },
+    { "name": "Loading Dock Heaters", "kw": 3.0,  "pf": 1.00, "load_type": "lighting","duty": "continuous"   }
   ]
 }

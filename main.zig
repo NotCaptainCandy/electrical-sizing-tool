@@ -30,7 +30,7 @@ pub fn main(init: std.process.Init) !void {
 
     // Parsing the CLI Arguments
 
-    var args = init.minimal.args.iterator();
+    var args = init.minimal.args.iterate();
     defer args.deinit();
     _ = args.next(); // skip executable name
 
@@ -80,7 +80,7 @@ pub fn main(init: std.process.Init) !void {
     // Reading and parsing the JSON
 
     const json_bytes = std.Io.Dir.cwd().readFileAlloc(io, cli.input_path, gpa, .limited(1024 * 1024)) catch |err| {
-        std.deub.print("Error reading '{s}': {}\n", .{ cli.input_path, err });
+        std.debug.print("Error reading '{s}': {}\n", .{ cli.input_path, err });
         return err;
     };
     defer gpa.free(json_bytes);

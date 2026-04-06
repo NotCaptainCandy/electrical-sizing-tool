@@ -1,11 +1,11 @@
 {
   "facility_name": "Northern Gas Compressor Station",
   "loads": [
-    { "name": "Main Compressor Motor",   "kw": 200.0, "pf": 0.85, "type": "motor",   "duty": "continuous"  },
-    { "name": "Standby Compressor Motor","kw": 150.0, "pf": 0.85, "type": "motor",   "duty": "intermittent"},
-    { "name": "Cooling Fan Motor",       "kw": 30.0,  "pf": 0.88, "type": "motor",   "duty": "continuous"  },
-    { "name": "Lube Oil Pump",           "kw": 11.0,  "pf": 0.87, "type": "motor",   "duty": "continuous"  },
-    { "name": "Control Room HVAC",       "kw": 15.0,  "pf": 0.90, "type": "hvac",    "duty": "intermittent"},
-    { "name": "Lighting + Outlets",      "kw": 10.0,  "pf": 0.95, "type": "lighting","duty": "continuous"  }
+    { "name": "Main Compressor Motor",    "kw": 200.0, "pf": 0.85, "load_type": "motor",   "duty": "continuous"   },
+    { "name": "Standby Compressor Motor", "kw": 150.0, "pf": 0.85, "load_type": "motor",   "duty": "intermittent" },
+    { "name": "Cooling Fan Motor",        "kw": 30.0,  "pf": 0.88, "load_type": "motor",   "duty": "continuous"   },
+    { "name": "Lube Oil Pump",            "kw": 11.0,  "pf": 0.87, "load_type": "motor",   "duty": "continuous"   },
+    { "name": "Control Room HVAC",        "kw": 15.0,  "pf": 0.90, "load_type": "hvac",    "duty": "intermittent" },
+    { "name": "Lighting + Outlets",       "kw": 10.0,  "pf": 0.95, "load_type": "lighting","duty": "continuous"   }
   ]
 }

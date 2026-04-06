@@ -32,7 +32,7 @@ pub fn writeReport(io: std.Io, allocator: std.mem.Allocator, out_path: []const u
     try buildFeederSizing(w, r);
     try buildMotorScreen(w, r);
     try sep(w);
-    try w.writeAll("Report complete.\n", .{});
+    try w.writeAll("Report complete.\n");
 
     const file = try std.Io.Dir.cwd().createFile(io, out_path, .{});
 
