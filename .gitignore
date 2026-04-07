@@ -1,3 +1,4 @@
 .zig-cache/
+reports/
 zig-out/
 *.o
