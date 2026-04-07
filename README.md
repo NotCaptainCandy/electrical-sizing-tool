@@ -8,7 +8,7 @@ A command-line tool written in Zig that automates early-stage electrical distrib
 
 Starting from a list of facility loads, `loadsched` walks through the following engineering workflow automatically:
 
-1. **Load aggregation** — applies demand/diversity factors per load type and duty cycle to compute total demand kW and kVA
+1. **Load aggregation** — applies demand factors per load type and duty cycle to compute total demand kW and kVA
 2. **Transformer sizing** — selects the next standard three-phase transformer rating above the demand (including a user-specified growth margin)
 3. **Main feeder sizing** — computes full-load current, then selects the smallest cable from a built-in table that satisfies both ampacity and the 3% voltage drop limit
 4. **Motor starting screen** — identifies the largest motor, computes a static motor/transformer kVA ratio and estimated voltage dip, and recommends a starting method if warranted
