@@ -16,6 +16,85 @@ Starting from a list of facility loads, `loadsched` walks through the following 
 
 ***
 
+## Sample Output
+
+```
+============================================================
+  INDUSTRIAL PLANT ELECTRICAL SIZING REPORT
+============================================================
+  Facility      : Acme Food Processing Plant
+  Supply voltage: 600 V (L-L)
+  Target PF     : 0.92
+  Growth margin : 20%
+  Feeder length : 80 m
+
+
+1. LOAD SUMMARY
+------------------------------------------------------------
+  Load Name                          kW     PF  Dem.Fct    Dem. kW   Dem. kVA
+  --------------------------------------------------------------------------
+  Process Motor 1                  75.0   0.88     1.00       75.0       85.2
+  Process Motor 2                  55.0   0.90     1.00       55.0       61.1
+  Air Compressor                   45.0   0.85     0.40       18.0       21.2
+  Conveyor Drive                   22.0   0.88     0.40        8.8       10.0
+  Lighting - Plant                 20.0   0.95     0.90       18.0       18.9
+  Lighting - Office                10.0   0.95     0.90        9.0        9.5
+  HVAC - Plant                     40.0   0.90     0.50       20.0       22.2
+  Office Outlets                   15.0   0.95     0.90       13.5       14.2
+  --------------------------------------------------------------------------
+  TOTAL                           282.0                      217.3      242.4
+
+  Connected load : 282.0 kW
+  Demand load    : 217.3 kW
+  Demand kVA     : 242.4 kVA
+  Effective PF   : 0.897
+
+2. TRANSFORMER SIZING
+------------------------------------------------------------
+  Demand kVA               : 242.4 kVA
+  Growth margin (20%)      : +48.5 kVA
+  Required kVA             : 290.8 kVA
+  Selected standard rating : 300 kVA
+  Utilization at demand    : 80.8%
+
+3. MAIN FEEDER SIZING
+------------------------------------------------------------
+  Full load current : 288.7 A
+  Feeder length     : 80 m
+  Selected cable    : 3C 150mm² Cu XLPE
+  Ampacity          : 310 A  [PASS]
+  Voltage drop      : 1.19%  [PASS]  (limit: 3.0%)
+
+  Cable comparison:
+  Cable                    Ampacity A       VD %     Amp.       VD
+  ----------------------------------------------------------------
+  3C 35mm² Cu XLPE               130       4.36     FAIL     FAIL
+  3C 50mm² Cu XLPE               160       3.09     FAIL     FAIL
+  3C 70mm² Cu XLPE               200       2.20     FAIL     PASS
+  3C 95mm² Cu XLPE               240       1.75     FAIL     PASS
+  3C 120mm² Cu XLPE              275       1.42     FAIL     PASS
+  3C 150mm² Cu XLPE              310       1.19     PASS     PASS <--
+  3C 185mm² Cu XLPE              355       0.99     PASS     PASS
+  3C 240mm² Cu XLPE              415       0.81     PASS     PASS
+  3C 300mm² Cu XLPE              470       0.68     PASS     PASS
+
+4. MOTOR STARTING SCREEN
+------------------------------------------------------------
+  Largest motor     : Process Motor 1
+  Motor kW / kVA    : 75.0 kW  /  85.2 kVA
+  Transformer kVA   : 300 kVA
+  Motor/Xfmr ratio  : 0.284  (threshold: 0.30)
+  Est. starting dip : 9.8%  (threshold: 10.0%)
+  Ratio check       : [OK]
+  VD estimate check : [OK]
+
+  Direct-on-line starting acceptable for this system.
+============================================================
+Report complete.
+```
+
+***
+
 ## Installation
 
 Download the binary for your platform from the [Releases](../../releases) page.
